@@ -117,6 +117,7 @@ def east_detect(image):
     boxes = non_max_suppression(np.array(rects), probs=confidences)
 
     words = []
+
     # loop over the bounding boxes
     for (startX, startY, endX, endY) in boxes:
         # scale the bounding box coordinates based on the respective
@@ -133,10 +134,23 @@ def east_detect(image):
         # draw the bounding box on the image
         cv2.rectangle(orig, (startX, startY),
                       (endX, endY), (0, 255, 0), 2)
+
+    # Sort bounding boxes according to position and put numbers on it
+    words.sort(key=lambda x: x[1])
+    id = 1
+
+    for startX, startY, _ in words:
+        orig = cv2.putText(orig, str(id), (startX, startY - 5),
+                           cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 255, 0), 2)
+        id += 1
+
     print(words)
     print("Time taken", time.time() - start)
     return orig
 
 
 def tesseract(image):
-    return pytesseract.image_to_string(image, config=("-l eng --oem 1 --psm 8"))
+    text = pytesseract.image_to_string(
+        image, config=("-l eng --oem 1 --psm 8"))
+    text = text.split('\n')[0]
+    return text

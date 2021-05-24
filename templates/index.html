@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCR</title>
-</head>
-<body>
-    <h1>Upload an image</h1>
-      <hr>
+{%extends "base.html" %}
 
-      <form action="/upload-image" method="POST" enctype="multipart/form-data">
+{%block content%}
 
-        <div class="form-group">
-          <label>Select image</label>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" name="image" id="image">
-          </div>
-        </div>
+<form action="/upload-image" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control-file" name="image" id="image">
+  </div>
+  <button type="submit" class="btn btn-primary">Upload</button>
+</form>
 
-        <button type="submit" class="btn btn-primary">Upload</button>
+<!-- <div id="video-container">
+	<video autoplay="true" id="videoElement">
+	
+	</video>
+</div> -->
 
-      </form>
-</body>
-</html>
+
+{% endblock %}
