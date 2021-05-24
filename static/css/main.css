@@ -21,31 +21,15 @@ img {
   background-color: rgb(51, 48, 48);
 }
 
-h4 {
-  color: azure;
-  text-align: center;
-  text-decoration: underline;
-}
-
-h1 {
-  color: azure;
-  text-align: center;
-}
-
-.card-text {
+h1,
+h4,
+.card-text,
+.card-body,
+.collapsed {
   color: azure;
   text-align: center;
 }
 
-/* #video-container {
-  margin: 0px auto;
-  width: 500px;
-  height: 375px;
-  border: 10px #333 solid;
+.canvas {
+  display: none;
 }
-
-#videoElement {
-  width: 500px;
-  height: 375px;
-  background-color: #666;
-} */

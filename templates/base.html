@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
     <title>OCR</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
                     <div class="card">
                         <img src="{{ url_for('static', filename='upload1.png') }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h4 class="card-title">Image Acquisition</h4>
+                            <h4 class="card-title" style="text-decoration: underline;">Image Acquisition</h4>
                             <p class="card-text">Upload or Capture Image</p>
                             <br>
                         </div>
@@ -40,7 +41,7 @@
                         <img src="{{ url_for('static', filename='detect.png') }}" class="card-img-top" alt="...">
                         <br><br>
                         <div class="card-body">
-                            <h4 class="card-title">Text Detection</h4>
+                            <h4 class="card-title" style="text-decoration: underline;">Text Detection</h4>
                             <p class="card-text">Localize text using EAST</p>
                             <br>
                         </div>
@@ -49,9 +50,9 @@
                   <div class="carousel-item">
                     <div class="card">
                         <br><br>
-                        <img src="{{ url_for('static', filename='recognize.png') }}" class="card-img-top" alt="...">
+                        <img src="{{ url_for('static', filename='recognize.png') }}" class="card-img-top" alt="..." style="margin-bottom: 13px;">
                         <div class="card-body">
-                            <h4 class="card-title">Text Recognition</h4>
+                            <h4 class="card-title" style="text-decoration: underline;">Text Recognition</h4>
                             <p class="card-text">Recognize text using Pytesseract</p>
                             <br>
                         </div>
@@ -61,7 +62,7 @@
                     <div class="card">
                         <img src="{{ url_for('static', filename='translate.png') }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h4 class="card-title">Text Translation</h4>
+                            <h4 class="card-title" style="text-decoration: underline;">Text Translation</h4>
                             <p class="card-text">Translate using API</p>
                             <br>
                         </div>
