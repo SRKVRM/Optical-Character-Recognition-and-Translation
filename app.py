@@ -20,7 +20,6 @@ def upload_image():
     if request.method == "POST":
         if request.files:
             image = request.files["image"]      # file storage object
-
             npimg = np.fromstring(image.read(), np.uint8)    # array
             # convert numpy array to image
             img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)  # ndarray
@@ -29,11 +28,11 @@ def upload_image():
 
             _, buffer = cv2.imencode('.png', image)
 
-            image_string = base64.b64encode(buffer)  # chod pataka
+            image_string = base64.b64encode(buffer)
             image_string = image_string.decode('utf-8')
-
+            print(image_string)
             return render_template("output.html", filestring=image_string)
-    return render_template("index.html")
+    return redirect('/')
 
 
 def east_detect(image):
