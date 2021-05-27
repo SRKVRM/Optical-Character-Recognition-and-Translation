@@ -41,17 +41,17 @@
         </div>
         <br>
         <div style="float: left;">
-          <a href="#!" class="btn btn-primary" id="startbutton">
+          <a class="btn btn-primary" id="startbutton">
               Capture
           </a>
         </div>
 
         <div class="text-right">
-          <a href="#!" class="btn btn-danger" 
+          <a class="btn btn-danger" 
               onClick="stop()">
               Stop Cam
           </a>
-          <a href="#!" class="btn btn-success"
+          <a class="btn btn-success"
               onClick="start()">
               Start Cam
           </a>
@@ -196,7 +196,7 @@
             contentType: false,
             cache: false,
             processData: false,
-            success:function(response){ document.write(response); } 
+            success:function(response){ document.write(response); } // ye output template overwrite kr de rha h 
         });
     });
 });

@@ -1,1 +1,22 @@
-<img src="data:image/png;base64, {{filestring}}" alt="alternate" height="500" width="auto" />
+{%extends "base.html" %}
+
+{% block content %}
+
+<img src="data:image/png;base64, {{filestring}}" alt="alternate" height="100%" width="100%" />
+
+{% endblock %}
+
+
+{% block display %}
+
+<div id="disp">
+    <br>
+    <ol>
+        {% for x in words %}
+        <li class="h3" style="margin-top: 2px; margin-bottom: 2px;">{{ x[2] }}</li>
+        {% endfor %}
+    </ol>  
+    <br> 
+</div> 
+
+{% endblock %}

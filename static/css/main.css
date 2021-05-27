@@ -13,7 +13,7 @@ img {
   height: auto;
 }
 
-.col-md-3 {
+#col1 {
   background-color: rgb(51, 48, 48);
 }
 
@@ -36,4 +36,10 @@ canvas {
 
 #hidden {
   display: none;
+}
+
+#disp {
+  padding-left: 1em;
+  color: azure;
+  background-color: rgb(51, 48, 48);
 }

@@ -24,14 +24,13 @@ def upload_image():
             # convert numpy array to image
             img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)  # ndarray
 
-            image = east_detect(img)      # ndarray
+            image, words = east_detect(img)      # ndarray
 
             _, buffer = cv2.imencode('.png', image)
 
             image_string = base64.b64encode(buffer)
             image_string = image_string.decode('utf-8')
-            print(image_string)
-            return render_template("output.html", filestring=image_string)
+            return render_template("output.html", filestring=image_string, words=words)
     return redirect('/')
 
 
@@ -145,7 +144,7 @@ def east_detect(image):
 
     print(words)
     print("Time taken", time.time() - start)
-    return orig
+    return (orig, words)
 
 
 def tesseract(image):
